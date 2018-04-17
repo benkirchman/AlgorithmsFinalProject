@@ -1,4 +1,5 @@
 import shortest_path as sp
+import generator as gen
 def basicTest():
     edges = [sp.Edge(0,1,1),sp.Edge(1,2,2),sp.Edge(0,2,2), sp.Edge(1,3,1), sp.Edge(2,3,2)]
     vertices = range(4)
@@ -21,6 +22,11 @@ def negativeTest():
         print(edge.asString())
     distances = sp.getShortestPath(edges, vertices)
     print(distances)
+def testAlternating():
+    n = 50
+    distances = sp.getShortestPath(gen.generateLessRandomIncompleteGraphRandomWeights(n), range(n))
+    print(distances)
 basicTest()
 directTest()
 negativeTest()
+testAlternating()

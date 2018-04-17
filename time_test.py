@@ -41,6 +41,7 @@ plt.grid(True)
 generatePlot(gen.generateCompleteGraphRandomWeights, "complete")
 generatePlot(gen.generateIncompleteGraphRandomWeights, "incomplete")
 generatePlot(gen.generateIncompleteGraphNegativeWeights, "negative")
+generatePlot(gen.generateLessRandomIncompleteGraphRandomWeights, "alternatingIncomplete")
 
 plt.legend(loc='upper left')
 plt.show()
