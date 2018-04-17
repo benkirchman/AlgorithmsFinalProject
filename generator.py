@@ -26,3 +26,15 @@ def generateIncompleteGraphRandomWeights(n):
             count+=1
             count = count % n
     return edges
+
+def generateIncompleteGraphNegativeWeights(n):
+    edges = []
+    weightRange = [i for i in range(-n,n)]
+    shuffle(weightRange)
+    count = 0
+    for i in range(n):
+        for j in range(n):
+            edges.append(Edge(i,j,weightRange[count]))
+            count+=1
+            count = count % n
+    return edges

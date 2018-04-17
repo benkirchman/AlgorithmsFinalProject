@@ -20,7 +20,7 @@ def getShortestPath(edges, vertices):
         node = predeccesors[node].startIndex
     '''
     return distances
-
+    
 
 class Edge:
     def __init__(self, startIndex, endIndex, weight):
