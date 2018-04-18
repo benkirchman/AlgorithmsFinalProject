@@ -20,24 +20,21 @@ def generateIncompleteGraphRandomWeights(n):
     count = 0
     for i in range(n):
         for j in range(n):
-            if i-j % 3 == 0:
-                break
-            edges.append(Edge(i,j,weightRange[count]))
+            if count % (i % (j+1)+1) == 0:
+                edges.append(Edge(i,j,weightRange[count]))
             count+=1
             count = count % n
     return edges
 
-def generateLessRandomIncompleteGraphRandomWeights(n):
+def generateCycle(n):
     edges = []
     weightRange = [i for i in range(1,n+1)]
     shuffle(weightRange)
     count = 0
-    for i in range(n):
-        for j in range(n):
-            if count % 2 != 0:
-                edges.append(Edge(i,j,weightRange[count]))
-                count+=1
-                count = count % n
+    for i in range(n-1):
+        edges.append(Edge(i,i+1,weightRange[count]))
+        count+=1
+        count = count % n
     return edges
 
 def generateIncompleteGraphNegativeWeights(n):

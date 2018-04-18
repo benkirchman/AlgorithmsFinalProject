@@ -22,11 +22,16 @@ def negativeTest():
         print(edge.asString())
     distances = sp.getShortestPath(edges, vertices)
     print(distances)
-def testAlternating():
+def testCycle():
     n = 50
-    distances = sp.getShortestPath(gen.generateLessRandomIncompleteGraphRandomWeights(n), range(n))
+    distances = sp.getShortestPath(gen.generateCycle(n), range(n))
+    print(distances)
+def testIncomplete():
+    n = 50
+    distances = sp.getShortestPath(gen.generateIncompleteGraphRandomWeights(n), range(n))
     print(distances)
 basicTest()
 directTest()
 negativeTest()
-testAlternating()
+testCycle()
+testIncomplete()
