@@ -37,7 +37,7 @@ def generateCycle(n):
         count = count % n
     return edges
 
-def generateIncompleteGraphNegativeWeights(n):
+def generateCompleteGraphNegativeWeights(n):
     edges = []
     weightRange = [i for i in range(-n,n)]
     shuffle(weightRange)

@@ -40,7 +40,7 @@ plt.grid(True)
 
 generatePlot(gen.generateCompleteGraphRandomWeights, "complete")
 generatePlot(gen.generateIncompleteGraphRandomWeights, "incomplete")
-generatePlot(gen.generateIncompleteGraphNegativeWeights, "negative")
+generatePlot(gen.generateCompleteGraphNegativeWeights, "negative")
 generatePlot(gen.generateCycle, "cycle")
 
 plt.legend(loc='upper left')
