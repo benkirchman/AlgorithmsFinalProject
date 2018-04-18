@@ -14,7 +14,7 @@ def getShortestPath(edges, vertices):
                 predeccesors[int(edge.endIndex)] = edge
     for edge in edges:
         if distances[edge.endIndex] > distances[edge.startIndex] + edge.weight:
-            print("Error negative cycle")
+            hasNegativeCycle = 1
     '''
     node = vertices[-1]
     shortest_path = []
